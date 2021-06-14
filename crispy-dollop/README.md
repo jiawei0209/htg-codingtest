@@ -28,3 +28,6 @@ The function are expected to return the next bigger element that are form using 
 
 5. Split the array into two (sorted and unsorted). The sequence of the value before the pointer will remain the same, hence we can assume that it is sorted. While the element after the pointer will need to sorted to make sure the result will be the next bigger number.
 6. Put the sorted and unsorted array back together and convert them into numbers again using join("").
+
+## Additional 
+The current function did not handle negative number.
