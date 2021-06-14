@@ -4,19 +4,21 @@ const arrange = (array) => {
 
   if (array.length <= 0 || array[0].length <= 0) return res;
 
+  // 1) initialise pointer
   let left = 0;
   let right = array[0].length;
   let top = 0;
   let bottom = array.length;
 
+  // 2) check is the row or column is it visited
   while (left < right && top < bottom) {
-    //get every element in the top row
+    // 3) get every element in the top row
     for (i = 0; i < right - left; i++) {
       res.push(array[top][left + i]);
     }
     top += 1;
 
-    //get element from the right column
+    // 4) get element from the right column
     for (i = 0; i < bottom - top; i++) {
       res.push(array[top + i][right - 1]);
     }
@@ -24,13 +26,13 @@ const arrange = (array) => {
 
     if (!(left < right && top < bottom)) break;
 
-    //get every element from the bottom row
+    // 5) get every element from the bottom row
     for (i = 0; i < right - left; i++) {
       res.push(array[bottom - 1][right - i - 1]);
     }
     bottom -= 1;
 
-    //get every element from the left column
+    // 6) get every element from the left column
     for (i = 0; i < bottom - top; i++) {
       res.push(array[bottom - i - 1][left]);
     }
